@@ -54,7 +54,7 @@ jobs:
       script:
         - export PACKAGE_VERSION=$(echo "const data = require('./package.json'); console.log(data.version)" | node)
         - node-deb --verbose -n "signalk-server-${TRAVIS_BRANCH}" -v "${PACKAGE_VERSION}-snapshot-${TRAVIS_BUILD_NUMBER}" -- index.js `find . -maxdepth 1 -type d | grep -v .git | grep -v node_modules | egrep -v '^\.$'`
-        - if [ $TRAVIS_TAG =~ ^v[0-9] ] ; then node-deb --verbose -n "signalk-server" -v "${PACKAGE_VERSION}" -- index.js `find . -maxdepth 1 -type d | grep -v .git | grep -v node_modules | egrep -v '^\.$'`; fi
+        - if [[ $TRAVIS_TAG =~ ^v[0-9] ]] ; then node-deb --verbose -n "signalk-server" -v "${PACKAGE_VERSION}" -- index.js `find . -maxdepth 1 -type d | grep -v .git | grep -v node_modules | egrep -v '^\.$'`; fi
         - ls -lh *.deb ; dpkg-deb --info *.deb
 #      deploy:
 #        - provider: packagecloud

@@ -87,7 +87,7 @@
     "user": "signalk-server",
     "group": "signalk-server",
     "executable_name": "signalk-server",
-    "dependencies": "build-essential,libavahi-compat-libdnssd-dev,libnss-mdns,avahi-utils",
+    "dependencies": "build-essential,libavahi-compat-libdnssd-dev,libnss-mdns,avahi-utils,nodejs (>= 8.0)",
     "install_strategy": "auto",
     "templates": {
 	    "postinst": "util/postinstall.sh"
