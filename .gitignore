@@ -13,3 +13,5 @@ settings/ssl-cert.pem
 work/
 
 docker-manifest.yml
+
+*.deb
