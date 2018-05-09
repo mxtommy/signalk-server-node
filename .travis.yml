@@ -54,24 +54,24 @@ jobs:
 	      node-deb --verbose -n "signalk-server"                  -v "${PACKAGE_VERSION}"                                 -- index.js `find . -maxdepth 1 -type d | grep -v .git | grep -v node_modules | egrep -v '^\.$'`
 	  fi
       script: ls -lh *.deb ; dpkg-deb --info *.deb
-#      deploy:
-#        - provider: packagecloud
-#          repository: signalk-server
-#          username: SignalK 
-#          token:
-#            secure:  "bKa9NU3sPNHxISTrYOuAOfJgZLuKXpywnHFjkOIvcrk1hu5NFqTcVGj7IGtOO93GU2rNmZqWl9WLSICYQZMZ7tL9Lfnj2AH3bU7JT9C8vbMtIc31FajKbPK81lhCDzSa5G3Y0SkyqwCGWdPfSHXeGR5sbQoWsSoTOhMOXP80hqc="
-#          dist: debian/stretch
-#          skip_cleanup: true
-#          package_glob: signalk-server*.deb
-#          on:
-#            all_branches: true
-#        - provider: packagecloud
-#          repository: signalk-server
-#          username: SignalK
-#          token:
-#            secure:  "bKa9NU3sPNHxISTrYOuAOfJgZLuKXpywnHFjkOIvcrk1hu5NFqTcVGj7IGtOO93GU2rNmZqWl9WLSICYQZMZ7tL9Lfnj2AH3bU7JT9C8vbMtIc31FajKbPK81lhCDzSa5G3Y0SkyqwCGWdPfSHXeGR5sbQoWsSoTOhMOXP80hqc="
-#          dist: raspbian/stretch
-#          skip_cleanup: true
-#          package_glob: signalk-server*.deb
-#          on:
-#            all_branches: true
+      deploy:
+        - provider: packagecloud
+          repository: signalk-server
+          username: SignalK 
+          token:
+            secure:  "t5Pd/vXCntWx1fPL536o8qwHZWcirVEOqH6S2kbKVjeCMsep5jEpipGn/dSFu+pjpkZKbJ2WmRJto6ApNwA/kJZa2SMrzHexGP/dIiwtc3i7MxWqdj0n3u9L2+G8wkUzmuFMoaudgU5AAWuW//CQjXVmdoVN1P+d4cCSqMKd6qCnGWfEiQSlypHji9NfZ85uef2S35XXTHc67VhjtjerKUpd2lj/wY86EcRssr0VGx06I64tjGoRjO0wcQwjIkutEUEadHKUenZ3r8n8WqroeU2+EdbtYlpX6mk6TCFRniZxDVpK1vKkYnsd/EJh5UAVKvMjK9BzYLa+MixNtLAfhJuK5UEQ3FG9PiPJHmt4u4F14it9mseVdMtZs1AwXlYmREnPACXayTZ71+W5CUWhUbeR97wTyVKBGoubcMgI1qvlJMHDDxWKFIa3pYoiuQe+gUVmo3CGpfe9VJifSyRTSW/IRuHW8NIro7skLV4CB6f6yG2n4LrZc7j1MK+wn/q08awtcgqngUQCBkw4HiYhAuqxZbQuOVX4TQZC4MoLKIHbpvFQ/YH4VaquBU4eymEA6VRr7ZGe2bCfCSHcNFrDDYzvvqroO16YyMKg9mxBRIwkR06bD7ZiGHAM/tEOnMpq9GQl/V3hqdeIRo5fMsfAwb9xpiyDeUMdeSW/6Ni5VGc="
+          dist: debian/stretch
+          skip_cleanup: true
+          package_glob: signalk-server*.deb
+          on:
+            all_branches: true
+        - provider: packagecloud
+          repository: signalk-server
+          username: SignalK
+          token:
+            secure:  "t5Pd/vXCntWx1fPL536o8qwHZWcirVEOqH6S2kbKVjeCMsep5jEpipGn/dSFu+pjpkZKbJ2WmRJto6ApNwA/kJZa2SMrzHexGP/dIiwtc3i7MxWqdj0n3u9L2+G8wkUzmuFMoaudgU5AAWuW//CQjXVmdoVN1P+d4cCSqMKd6qCnGWfEiQSlypHji9NfZ85uef2S35XXTHc67VhjtjerKUpd2lj/wY86EcRssr0VGx06I64tjGoRjO0wcQwjIkutEUEadHKUenZ3r8n8WqroeU2+EdbtYlpX6mk6TCFRniZxDVpK1vKkYnsd/EJh5UAVKvMjK9BzYLa+MixNtLAfhJuK5UEQ3FG9PiPJHmt4u4F14it9mseVdMtZs1AwXlYmREnPACXayTZ71+W5CUWhUbeR97wTyVKBGoubcMgI1qvlJMHDDxWKFIa3pYoiuQe+gUVmo3CGpfe9VJifSyRTSW/IRuHW8NIro7skLV4CB6f6yG2n4LrZc7j1MK+wn/q08awtcgqngUQCBkw4HiYhAuqxZbQuOVX4TQZC4MoLKIHbpvFQ/YH4VaquBU4eymEA6VRr7ZGe2bCfCSHcNFrDDYzvvqroO16YyMKg9mxBRIwkR06bD7ZiGHAM/tEOnMpq9GQl/V3hqdeIRo5fMsfAwb9xpiyDeUMdeSW/6Ni5VGc="
+          dist: raspbian/stretch
+          skip_cleanup: true
+          package_glob: signalk-server*.deb
+          on:
+            all_branches: true
